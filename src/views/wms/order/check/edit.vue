@@ -61,19 +61,6 @@
       <el-card header="商品明细" class="mt10">
         <div class="receipt-order-content">
           <div class="flex-space-between mb8">
-            <div>
-              <span>审批 | 一物一码：</span>
-              <el-switch
-                :before-change="goSaasTip"
-                class="mr10 ml10"
-                inline-prompt
-                size="large"
-                :active-value="true"
-                :inactive-value="false"
-                active-text="开启"
-                inactive-text="关闭"
-              />
-            </div>
                   <el-button type="primary" plain="plain" size="default" @click="showSkuSelect" icon="Plus"
                              :disabled="!form.warehouseId">新增库存
                   </el-button>
@@ -419,13 +406,6 @@ const handleChangeQuantity = () => {
     }
   })
   form.value.totalQuantity = totalQuantity
-}
-
-const goSaasTip = () => {
-  ElMessageBox.alert('如需体验，请在公众号内回复：saas', '请去Saas版本体验', {
-    confirmButtonText: '确定'
-  })
-  return false
 }
 
 </script>
