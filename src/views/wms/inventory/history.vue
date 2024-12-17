@@ -79,6 +79,11 @@
             <div v-if="row.itemSku.skuCode">规格编号：{{ row.itemSku.skuCode }}</div>
           </template>
         </el-table-column>
+        <el-table-column label="商品单位">
+          <template #default="{ row }">
+            <div>{{ row.item.unit }}</div>
+          </template>
+        </el-table-column>
         <el-table-column label="订单类型" align="center" width="100">
           <template #default="{ row }">
             <dict-tag :options="wms_inventory_history_type" :value="row.orderType"/>

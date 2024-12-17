@@ -58,6 +58,11 @@
               <div v-if="row.itemSku.skuCode">规格编号：{{ row.itemSku.skuCode }}</div>
             </template>
           </el-table-column>
+          <el-table-column label="商品单位">
+            <template #default="{ row }">
+              <div>{{ row.item.unit }}</div>
+            </template>
+          </el-table-column>
         </template>
         <template v-else>
           <el-table-column label="商品信息" prop="itemId">
@@ -70,6 +75,11 @@
             <template #default="{ row }">
               <div>{{ row.itemSku.skuName }}</div>
               <div v-if="row.itemSku.skuCode">规格编号：{{ row.itemSku.skuCode }}</div>
+            </template>
+          </el-table-column>
+          <el-table-column label="商品单位">
+            <template #default="{ row }">
+              <div>{{ row.item.unit }}</div>
             </template>
           </el-table-column>
           <el-table-column label="仓库" prop="skuIdAndWarehouseId">

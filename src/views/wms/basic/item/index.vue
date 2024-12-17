@@ -85,37 +85,9 @@
                 <div v-if="row.itemSku.barcode">条码：{{ row.itemSku.barcode }}</div>
               </template>
             </el-table-column>
-            <el-table-column label="金额(元)" width="160" align="left">
+            <el-table-column label="商品单位">
               <template #default="{ row }">
-                <div v-if="row.itemSku.costPrice" class="flex-space-between">
-                  <span>成本价：</span>
-                  <div>{{ (row.itemSku.costPrice || row.itemSku.costPrice === 0) ? row.itemSku.costPrice : '' }}</div>
-                </div>
-                <div v-if="row.itemSku.sellingPrice" class="flex-space-between">
-                  <span>销售价：</span>
-                  <div>{{ (row.itemSku.sellingPrice || row.itemSku.sellingPrice === 0) ? row.itemSku.sellingPrice : '' }}</div>
-                </div>
-              </template>
-            </el-table-column>
-            <el-table-column label="重量(kg)" width="160" align="left">
-              <template #default="{ row }">
-                <div v-if="row.itemSku.netWeight" class="flex-space-between">
-                  <span>净重：</span>
-                  <div>
-                    {{ (row.itemSku.netWeight || row.itemSku.netWeight === 0) ? row.itemSku.netWeight : '' }}
-                  </div>
-                </div>
-                <div v-if="row.itemSku.grossWeight" class="flex-space-between">
-                  <span>毛重：</span>
-                  <div>
-                    {{ (row.itemSku.grossWeight || row.itemSku.grossWeight === 0) ? row.itemSku.grossWeight : '' }}
-                  </div>
-                </div>
-              </template>
-            </el-table-column>
-            <el-table-column label="长宽高(cm)" align="right" width="250">
-              <template #default="{ row }">
-                <div>{{ getVolumeText(row.itemSku) }}</div>
+                <div>{{ row.item.unit }}</div>
               </template>
             </el-table-column>
             <el-table-column label="操作" align="right" prop="itemId" width="200">
