@@ -110,18 +110,6 @@
             </div>
           </template>
         </el-table-column>
-        <el-table-column label="数量/金额(元)">
-          <template #default="{ row }">
-            <div class="flex-space-between">
-              <div>数量：</div>
-              <el-statistic :value="Number(row.quantity)" :precision="0"/>
-            </div>
-            <div class="flex-space-between" v-if="row.amount || row.amount === 0">
-              <div>金额：</div>
-              <el-statistic :value="Number(row.amount)" :precision="2"/>
-            </div>
-          </template>
-        </el-table-column>
         <el-table-column label="操作时间" prop="createTime"/>
       </el-table>
 
